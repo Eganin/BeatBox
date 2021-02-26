@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         binding.mainRecyclerView.apply {
             layoutManager = GridLayoutManager(context, 3)
-            adapter = SoundAdapter(sounds=beatBox.sounds)
+            adapter = SoundAdapter(sounds=beatBox.sounds,beatBox=beatBox)
         }
     }
 }

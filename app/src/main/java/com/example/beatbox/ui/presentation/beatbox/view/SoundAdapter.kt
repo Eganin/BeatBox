@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beatbox.R
+import com.example.beatbox.data.model.entities.BeatBox
 import com.example.beatbox.data.model.entities.Sound
 
-class SoundAdapter(private val sounds: List<Sound>) : RecyclerView.Adapter<SoundHolder>() {
+class SoundAdapter(private val sounds: List<Sound>,private val beatBox : BeatBox) : RecyclerView.Adapter<SoundHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         SoundHolder(
             binding = DataBindingUtil.inflate(
@@ -15,7 +16,8 @@ class SoundAdapter(private val sounds: List<Sound>) : RecyclerView.Adapter<Sound
                 R.layout.list_item_sound,
                 parent,
                 false
-            )
+            ),
+            beatBox=beatBox
         )
 
     override fun onBindViewHolder(holder: SoundHolder, position: Int) {
